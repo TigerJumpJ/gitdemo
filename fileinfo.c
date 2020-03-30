@@ -79,3 +79,17 @@ void sum_triple(int A[][N],int B[][N],int C[][N])
 			}
 	}
 }
+int main()
+{
+	int a[6][N]={{1,1,1},{1,3,3},{2,1,2},{2,2,1},{2,3,4},{3,3,1}};
+	int b[5][N]={{1,1,2},{1,2,1},{2,1,1},{3,1,1},{3,3,2}};
+	int C[M][N];   
+	sum_triple(a,b,C);
+	int k=0;
+	for(k;k<8;k++)
+	{
+		printf("(%d,%d,%d)",C[k][0],C[k][1],C[k][2]);
+		printf("\n");
+	}
+	return 0;
+}
