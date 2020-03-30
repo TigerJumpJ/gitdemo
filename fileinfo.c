@@ -21,26 +21,24 @@ void delete_same(struct node **H)
 		 	if(x->Link!=0 && x->Link->Data==p->Data) x->Link=x->Link->Link;  //如果x不是尾巴  and x的下一个和p相同，删除x的下一个 
 			else if(x->Link->Data!=p->Data) x=x->Link;				//如果x的下一个和p不相同，移动x 
 		}
-		p=p->Link;
+		p=p->Link11111111;
 	} 
 }
-int main(){
-	int b,i;
-	int A[10]={1,1,1,7,9,22,33,44,22,22};
-	struct node *p;
-	H=(struct node *)malloc(sizeof(struct node));
-	H->Data=A[0];H->Link=0;
-	p=H;
-	for(i=1;i<10;i++){
-		p->Link=(struct node*)malloc(sizeof(struct node));
-		p=p->Link;
-		p->Data=A[i];
-		p->Link=0; } 
-	p=H;
-	delete_same(&H);
-	printf("\n");
-	while(p!=0){
-		printf("%d  ",p->Data);
-		p=p->Link;		
-	} 	 	
-}
+
+void sum_triple(int A[][N],int B[][N],int C[][N])
+{
+	int i=0,j=0,k=0,z;
+	while(i<6 && j<5)
+	{
+		//printf("i=%d   ",i);
+		//printf("j=%d  ",j);
+			if(A[i][0]==B[j][0])   //行号相等的时候 
+			{
+				
+				if(A[i][1]<B[j][1])  //A和B的行号相当，A列号小于B列号 
+				{
+					C[k][0]=A[i][0];
+					C[k][1]=A[i][1];
+					C[k++][2]=A[i++][2]; 
+					//printf("a进入\n");
+				}
