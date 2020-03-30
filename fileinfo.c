@@ -24,4 +24,23 @@ void delete_same(struct node **H)
 		p=p->Link;
 	} 
 }
-
+int main(){
+	int b,i;
+	int A[10]={1,1,1,7,9,22,33,44,22,22};
+	struct node *p;
+	H=(struct node *)malloc(sizeof(struct node));
+	H->Data=A[0];H->Link=0;
+	p=H;
+	for(i=1;i<10;i++){
+		p->Link=(struct node*)malloc(sizeof(struct node));
+		p=p->Link;
+		p->Data=A[i];
+		p->Link=0; } 
+	p=H;
+	delete_same(&H);
+	printf("\n");
+	while(p!=0){
+		printf("%d  ",p->Data);
+		p=p->Link;		
+	} 	 	
+}
